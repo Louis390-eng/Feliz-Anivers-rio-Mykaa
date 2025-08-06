@@ -1,115 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Feliz Aniversário, Mykaella! - Estilo Enrolados 🎈</title>
-<style>
-  /* Fundo crepuscular inspirado no pôr do sol do filme */
-  body {
-    margin: 0;
-    height: 100vh;
-    overflow: hidden;
-    background: linear-gradient(to top, #f7b733 0%, #4a00e0 100%);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff8dc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    margin: 0.2em 0 0 0;
-    text-shadow: 0 0 8px #ffd966, 0 0 20px #ffb347;
-  }
-
-  h2 {
-    font-weight: normal;
-    margin-top: 0.5em;
-    font-size: 1.5rem;
-    text-shadow: 0 0 6px #ffb347;
-  }
-
-  /* Mensagem */
-  .mensagem {
-    max-width: 600px;
-    background: rgba(0,0,0,0.3);
-    padding: 1.5em 2em;
-    border-radius: 20px;
-    box-shadow: 0 0 30px #ffdb70;
-    margin-top: 1em;
-    font-size: 1.3rem;
-    line-height: 1.6;
-  }
-
-  /* Lanternas */
-  .lanterna {
-    position: absolute;
-    bottom: -80px;
-    width: 40px;
-    height: 60px;
-    background: radial-gradient(circle at center, #ffec9b, #ffb347);
-    border-radius: 20% 20% 50% 50% / 30% 30% 70% 70%;
-    box-shadow:
-      0 0 8px 2px #ffdb70,
-      inset 0 10px 8px rgba(255, 255, 255, 0.6);
-    opacity: 0.8;
-    animation-name: subirLanterna, brilhar;
-    animation-timing-function: ease-in-out, ease-in-out;
-    animation-iteration-count: infinite, infinite;
-    animation-direction: normal, alternate;
-  }
-
-  @keyframes subirLanterna {
-    0% {
-      transform: translateY(0) scale(1);
-      opacity: 0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Aniversário, Mykaella! 🎈</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(to top, #f7b733 0%, #4a00e0 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff8dc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 20px;
     }
-    30% {
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-110vh) scale(1.2);
-      opacity: 0;
-    }
-  }
 
-  @keyframes brilhar {
-    0% {
-      filter: brightness(1);
+    h1 {
+      font-size: 2.5rem;
+      margin: 0.3em 0 0;
+      text-shadow: 0 0 8px #ffd966, 0 0 20px #ffb347;
+      animation: pulseHeart 3s infinite;
     }
-    100% {
-      filter: brightness(1.6);
-    }
-  }
 
-  /* Efeito pulsante no título */
-  h1 {
-    animation: pulseHeart 3s infinite;
-  }
-
-  @keyframes pulseHeart {
-    0%, 100% {
-      text-shadow:
-        0 0 8px #ffd966,
-        0 0 20px #ffb347,
-        0 0 30px #ffb347;
-      transform: scale(1);
+    h2 {
+      font-weight: normal;
+      margin-top: 0.5em;
+      font-size: 1.2rem;
+      text-shadow: 0 0 6px #ffb347;
     }
-    50% {
-      text-shadow:
-        0 0 15px #fffccc,
-        0 0 40px #ffec70,
-        0 0 60px #ffec70;
-      transform: scale(1.05);
-    }
-  }
 
-</style>
+    .mensagem {
+      max-width: 90%;
+      background: rgba(0,0,0,0.3);
+      padding: 1.2em 1.5em;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #ffdb70;
+      margin-top: 1em;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .lanterna {
+      position: absolute;
+      bottom: -80px;
+      width: 30px;
+      height: 45px;
+      background: radial-gradient(circle at center, #ffec9b, #ffb347);
+      border-radius: 20% 20% 50% 50% / 30% 30% 70% 70%;
+      box-shadow:
+        0 0 8px 2px #ffdb70,
+        inset 0 10px 8px rgba(255, 255, 255, 0.6);
+      opacity: 0.8;
+      animation-name: subirLanterna, brilhar;
+      animation-timing-function: ease-in-out, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+      animation-direction: normal, alternate;
+    }
+
+    @keyframes subirLanterna {
+      0% { transform: translateY(0) scale(1); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.2); opacity: 0; }
+    }
+
+    @keyframes brilhar {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.6); }
+    }
+
+    @keyframes pulseHeart {
+      0%, 100% {
+        text-shadow: 0 0 8px #ffd966, 0 0 20px #ffb347, 0 0 30px #ffb347;
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 15px #fffccc, 0 0 40px #ffec70, 0 0 60px #ffec70;
+        transform: scale(1.05);
+      }
+    }
+
+    /* Responsividade para telas menores */
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1rem; }
+      .mensagem { font-size: 1rem; padding: 1em; }
+    }
+  </style>
 </head>
 <body>
 
@@ -118,30 +100,21 @@
 
   <div class="mensagem">
     Você merece muito, você é muito importante pra cada pessoa que está aqui no dia de hoje!<br />
-    e que os momentos de hoje seja tão incríveis quanto a magia do pôr do sol e das lanternas, Você merece o melhor! 💛<br />
-    Com carinho, Luisãoo! 💛<br>
+    Que os momentos de hoje sejam tão incríveis quanto a magia do pôr do sol e das lanternas.<br />
+    Você merece o melhor! 💛<br /><br />
+    Com carinho, Luisãoo! 💛
   </div>
 
   <script>
     const totalLanternas = 30;
-
-    for(let i=0; i < totalLanternas; i++) {
+    for(let i = 0; i < totalLanternas; i++) {
       const lanterna = document.createElement('div');
       lanterna.classList.add('lanterna');
-
-      // Posiciona horizontalmente em toda a largura da tela
       lanterna.style.left = Math.random() * 100 + 'vw';
-
-      // Tempo aleatório para não subirem todas juntas (entre 10 e 25 segundos)
       lanterna.style.animationDuration = (10 + Math.random() * 15) + 's';
-
-      // Delay aleatório para espalhar o efeito
       lanterna.style.animationDelay = (Math.random() * 25) + 's';
-
-      // Escala aleatória entre 0.6 e 1.2
       const scale = 0.6 + Math.random() * 0.6;
       lanterna.style.transform = `scale(${scale})`;
-
       document.body.appendChild(lanterna);
     }
   </script>
