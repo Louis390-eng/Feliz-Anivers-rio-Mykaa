@@ -61,6 +61,7 @@
       animation-timing-function: ease-in-out, ease-in-out;
       animation-iteration-count: infinite, infinite;
       animation-direction: normal, alternate;
+      pointer-events: none;
     }
 
     @keyframes subirLanterna {
@@ -85,7 +86,23 @@
       }
     }
 
-    /* Responsivo para celulares */
+    #replay-btn {
+      margin-top: 2em;
+      padding: 0.7em 1.5em;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffd966;
+      color: #4a00e0;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ffdb70;
+      transition: transform 0.2s ease;
+    }
+
+    #replay-btn:hover {
+      transform: scale(1.05);
+    }
+
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1rem; }
@@ -105,22 +122,42 @@
     Com carinho, Luisãoo! 💛
   </div>
 
+  <button id="replay-btn">🔁 Rever Lanternas</button>
+
+  <!-- Música de fundo -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio embutido.
+  </audio>
+
   <script>
-    const totalLanternas = 30;
+    function criarLanternas(qtd = 30) {
+      const lanternas = [];
 
-    for (let i = 0; i < totalLanternas; i++) {
-      const lanterna = document.createElement('div');
-      lanterna.classList.add('lanterna');
+      for (let i = 0; i < qtd; i++) {
+        const lanterna = document.createElement('div');
+        lanterna.classList.add('lanterna');
 
-      lanterna.style.left = Math.random() * 100 + 'vw';
-      lanterna.style.animationDuration = (10 + Math.random() * 15) + 's';
-      lanterna.style.animationDelay = (Math.random() * 25) + 's';
+        lanterna.style.left = Math.random() * 100 + 'vw';
+        lanterna.style.animationDuration = (10 + Math.random() * 15) + 's';
+        lanterna.style.animationDelay = (Math.random() * 25) + 's';
+        const scale = 0.6 + Math.random() * 0.6;
+        lanterna.style.transform = `scale(${scale})`;
 
-      const scale = 0.6 + Math.random() * 0.6;
-      lanterna.style.transform = `scale(${scale})`;
+        document.body.appendChild(lanterna);
+        lanternas.push(lanterna);
+      }
 
-      document.body.appendChild(lanterna);
+      return lanternas;
     }
+
+    // Criar as lanternas iniciais
+    let lanternasAtivas = criarLanternas();
+
+    document.getElementById('replay-btn').addEventListener('click', () => {
+      lanternasAtivas.forEach(l => l.remove());
+      lanternasAtivas = criarLanternas();
+    });
   </script>
 
 </body>
