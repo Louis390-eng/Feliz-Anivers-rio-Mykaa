@@ -22,8 +22,8 @@
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin: 0.3em 0 0;
+      font-size: 3.5rem;
+      margin: 0.2em 0 0;
       text-shadow: 0 0 8px #ffd966, 0 0 20px #ffb347;
       animation: pulseHeart 3s infinite;
     }
@@ -31,18 +31,18 @@
     h2 {
       font-weight: normal;
       margin-top: 0.5em;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-shadow: 0 0 6px #ffb347;
     }
 
     .mensagem {
-      max-width: 90%;
-      background: rgba(0,0,0,0.3);
-      padding: 1.2em 1.5em;
+      max-width: 600px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.5em 2em;
       border-radius: 20px;
       box-shadow: 0 0 30px #ffdb70;
       margin-top: 1em;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       line-height: 1.6;
     }
 
@@ -85,7 +85,7 @@
       }
     }
 
-    /* Responsividade para telas menores */
+    /* Responsivo para celulares */
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1rem; }
@@ -95,8 +95,8 @@
 </head>
 <body>
 
-  <h1>✨ Feliz Aniversário, MYKAAAAA! ✨</h1>
-  <h2>Seu aniversário já foi, mas que seu dia hoje seja tão mágico quanto as lanternas no céu de Enrolados! 💛</h2>
+  <h1>Feliz Aniversário, Mykaella! 🎉</h1>
+  <h2>Que seu dia seja mágico como um pôr do sol com lanternas!</h2>
 
   <div class="mensagem">
     Você merece muito, você é muito importante pra cada pessoa que está aqui no dia de hoje!<br />
@@ -107,14 +107,18 @@
 
   <script>
     const totalLanternas = 30;
-    for(let i = 0; i < totalLanternas; i++) {
+
+    for (let i = 0; i < totalLanternas; i++) {
       const lanterna = document.createElement('div');
       lanterna.classList.add('lanterna');
+
       lanterna.style.left = Math.random() * 100 + 'vw';
       lanterna.style.animationDuration = (10 + Math.random() * 15) + 's';
       lanterna.style.animationDelay = (Math.random() * 25) + 's';
+
       const scale = 0.6 + Math.random() * 0.6;
       lanterna.style.transform = `scale(${scale})`;
+
       document.body.appendChild(lanterna);
     }
   </script>
